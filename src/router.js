@@ -16,5 +16,5 @@ const routes = [
 
 export const router = createRouter({
   routes,
-  history: createWebHistory("/cci-website/"),
+  history: createWebHistory(import.meta.env.BASE_URL),
 });
