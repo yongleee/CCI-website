@@ -11,7 +11,7 @@ const { imageName } = defineProps({
 });
 
 function getImgUrl(name) {
-  return new URL(`../assets/${name}.JPG`, import.meta.url).href;
+  return new URL(`../assets/${name}.jpg`, import.meta.url).href;
 }
 </script>
 
