@@ -6,7 +6,7 @@
       <li class="md:basis-24 basis-1/6">
         <router-link to="/">
           <img
-            src="../assets/logo.JPG"
+            src="../assets/logo.jpg"
             alt=""
             class="my-6 md:mx-12 mx-auto rounded-full"
           />
