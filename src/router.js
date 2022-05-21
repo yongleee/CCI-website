@@ -10,7 +10,7 @@ const routes = [
     },
   },
   {
-    path: "/:id",
+    path: "/:id/:title",
     name: "Content",
     component: () => import("./views/Content.vue"),
     props: true,
@@ -24,8 +24,8 @@ export const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   let documentTitle = `${to.meta.title}`;
-  if (to.query.title) {
-    documentTitle = `${to.query.title}`;
+  if (to.params.title) {
+    documentTitle = `${to.params.title}`;
   }
   document.title = documentTitle;
   next();

@@ -26,8 +26,7 @@ const mainTitle = store.getTitle(imageID);
     <router-link
       :to="{
         name: 'Content',
-        params: { id: imageID },
-        query: { title: mainTitle },
+        params: { id: imageID, title: mainTitle },
       }"
     >
       <img
