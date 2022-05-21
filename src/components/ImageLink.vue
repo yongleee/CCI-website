@@ -1,5 +1,7 @@
 <script setup>
-const { imageName } = defineProps({
+import { useImgContent } from "../stores/imgContent";
+
+const { imageName, imageID } = defineProps({
   imageName: {
     type: String,
     required: true,
@@ -13,11 +15,21 @@ const { imageName } = defineProps({
 function getImgUrl(name) {
   return new URL(`../assets/${name}.jpg`, import.meta.url).href;
 }
+
+const store = useImgContent();
+
+const mainTitle = store.getTitle(imageID);
 </script>
 
 <template>
   <div class="overflow-hidden md:w-56 m-0.5">
-    <router-link :to="{ name: 'Content', params: { id: imageID } }">
+    <router-link
+      :to="{
+        name: 'Content',
+        params: { id: imageID },
+        query: { title: mainTitle },
+      }"
+    >
       <img
         :src="getImgUrl(imageName)"
         alt=""

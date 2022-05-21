@@ -23,6 +23,10 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title}`;
+  let documentTitle = `${to.meta.title}`;
+  if (to.query.title) {
+    documentTitle = `${to.query.title}`;
+  }
+  document.title = documentTitle;
   next();
 });

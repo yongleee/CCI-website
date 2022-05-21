@@ -13,6 +13,7 @@ const props = defineProps({
 const id = parseInt(props.id);
 
 const store = useImgContent();
+const mainTitle = ref(store.getTitle(id));
 
 const { imgContent1, imgContent2, imgContent3, imgContent4, imgContent5 } =
   store.getContent(id);
@@ -44,8 +45,6 @@ const contents = ref([
     subContent: imgContent5,
   },
 ]);
-
-const mainTitle = ref(store.getTitle(id));
 </script>
 
 <template>
