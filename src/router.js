@@ -15,6 +15,10 @@ const routes = [
     component: () => import("./views/Content.vue"),
     props: true,
   },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/",
+  },
 ];
 
 export const router = createRouter({
